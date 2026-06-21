@@ -7,10 +7,9 @@ on:
 
 permissions:
   contents: read
-  pages: write
+  pages: write      # Permissions needed to fix the 404 error
   id-token: write
 
-# Prevents multiple deployments from running at the same time and conflicting
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -19,7 +18,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }} # Displays live link on GitHub
+      url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
 
@@ -33,5 +32,5 @@ jobs:
           path: .
 
       - name: Deploy to GitHub Pages
-        id: deployment # <-- Tied directly to the URL up in the environment block
+        id: deployment
         uses: actions/deploy-pages@v4
