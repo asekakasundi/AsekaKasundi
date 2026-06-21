@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -13,14 +16,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Structural checks
       - name: Verify HTML File Exists
         run: test -f index.html
 
       - name: Verify CSS File Exists
         run: test -f style.css
 
-      - name: Verify JavaScript File Exists
-        run: test -f script.js
+      # Check HTML syntax
+      - name: Lint HTML
+        uses: htmlhint/htmlhint-action@v2
+        with:
+          file_pattern: 'index.html'
+
+      # 3. Check CSS syntax using a pre-built standard action
+      - name: Lint CSS
+        uses: m1guelpf/css-linter-action@v1
+        with:
+          path: 'style.css'
 
       - name: CI Successful
         run: echo "Website Passed Validation"
