@@ -24,5 +24,71 @@
             </div>
         </div>
     </div>
+<!-- -------------------------------About Section--------------------------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-c1"> 
+                    <img src="Img.png" alt="Profile Picture">
+                </div>
+
+                <div class="about-c2">
+                    <h1 class="aboutHead">About Me</h1>
+                    <p>I’m an aspiring full-stack developer passionate about building practical web applications 
+                        that solve everyday problems. I enjoy working with modern web technologies, designing clean interfaces, 
+                        and developing reliable backend functionality. Through university and personal projects,
+                         <br>I’m continuously strengthening my skills in web development, teamwork, and problem-solving.</p>
+
+                         <div class="tab-ttl">
+                            <p class ="tab-links active-link" onclick="opentab('skills')">Skills</p> 
+                            <p class ="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class ="tab-links" onclick="opentab('education')">Education</p>
+
+                         </div>
+                         <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designing Web Applications</li>
+                                <li><span>Web Development</span><br>Web application Development</li>
+                                <li><span>Programming Languages</span><br>Python, JavaScript, Java, CSS</li>
+                                <li><span>Tools</span><br>Git, GitHub, Visual Studio Code, Figma</li>
+                                <li><span>Soft Skills</span><br>Problem-solving, Communication, Teamwork, Time Management</li>
+
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2025 - Current</span><br>A student at University of Sri Jayawardanapura</li>
+                                <li><span>2024 - 2025</span><br>Customer Service Representative - Dialog Business Services</li>
+                            </ul>
+                         </div>
+                         <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2025 - Current</span><br>Higher Education at University of Sri Jayawardanapura</li>
+                                <li><span>2021 - 2023</span><br>Secondary Education at Gothami Balika Vidyalaya</li>
+                                <li><span>2010 - 2020</span><br>Primary Education at Kolonnawa Balika Vidyalaya</li>
+                            </ul>
+                         </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Get all tab links and tab contents
+            var tabLinks = document.getElementsByClassName("tab-links");
+            var tabContents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                //Remove active classes from all links and contents
+                for(tabLink of tabLinks){
+                    tabLink.classList.remove("active-link");
+                }
+                for(tabContent of tabContents){
+                    tabContent.classList.remove("active-tab");
+                }
+                //Add active classes to the clicked link and corresponding tab content
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
 </body>
 </html>
