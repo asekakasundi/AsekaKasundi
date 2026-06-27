@@ -3,8 +3,7 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - main
-      - Services
+      - '**' # Tests all branches on push
 
 jobs:
   test:
