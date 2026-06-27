@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Aseka Kasundi</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4b35004957.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
@@ -14,6 +15,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -33,7 +35,7 @@
                 </div>
 
                 <div class="about-c2">
-                    <h1 class="aboutHead">About Me</h1>
+                    <h1 class="subHead">About Me</h1>
                     <p>I’m an aspiring full-stack developer passionate about building practical web applications 
                         that solve everyday problems. I enjoy working with modern web technologies, designing clean interfaces, 
                         and developing reliable backend functionality. Through university and personal projects,
@@ -71,6 +73,35 @@
                 </div>
             </div>
         </div>
+    </div>
+
+<!-- ---------------------------------------------Services----------------------------------------------------------------------------->
+<div id="service">
+    <div class="container">
+        <h1 class="subHead">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-crop" style="color: #272b36;"></i>
+                <h2>Web Design</h2>
+                <p>Designing and developing responsive and clean and responsive websites with a focus on usability and user experience.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code" style="color: #272b36;"></i>
+                <h2>Portfolio & Landing Pages</h2>
+                <p>Design and develop clean personal portfolios, event pages, and simple business landing pages.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-window-maximize" style="color: #272b36;"></i>
+                <h2>Web Application Development</h2>
+                <p>Build small web applications with features such as forms, user accounts, data management, and CRUD functionality.</p>
+                <a href="#">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
         <script>
             // Get all tab links and tab contents
@@ -82,6 +113,7 @@
                 for(tabLink of tabLinks){
                     tabLink.classList.remove("active-link");
                 }
+                // Remove active classes from all tab contents
                 for(tabContent of tabContents){
                     tabContent.classList.remove("active-tab");
                 }
