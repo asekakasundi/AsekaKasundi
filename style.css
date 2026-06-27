@@ -204,3 +204,63 @@ nav ul li a:hover::after{
     background: #8c919d;
     transform: translateY(-10px);
  }
+
+/* ----------------Portfolio--------------------------- */
+#portfolio{
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.layer{
+    top: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), #6d7791);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a{
+    margin-top: 20px;
+    color: #d7d7d6;
+    font-size: 18px;
+    line-height: 60px;
+    height: 60px;
+    width: 60px;
+    background: #b7b7b6;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+}
