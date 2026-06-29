@@ -10,6 +10,9 @@ body{
     color: #d7d7d6
 }
 
+html{
+    scroll-behavior: smooth;
+}
 
 #header{
     width: 100%;
@@ -357,4 +360,70 @@ form .btn2{
     background: #1b1e28;
     font-weight: 300;
     margin-top: 20px;
+}
+
+/*----------------------Mobile view ---------------------------------------*/
+
+nav .icon{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(Images/MyImageSmall.png);
+    }
+    .header-content{
+        margin-top:100%;
+        font-size:16px;
+    }
+    .header-content h1{
+        font-size: 30px;
+    }
+    nav .icon{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #886552;
+        position: fixed ;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .icon{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .subHead{
+        font-size: 40px;
+    }
+    .about-c1, .about-c2{
+        flex-basis: 100%;
+    }
+    .about-c1{
+        margin-bottom: 30px;
+    }
+    .about-c2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
 }
