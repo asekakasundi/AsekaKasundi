@@ -289,3 +289,72 @@ nav ul li a:hover::after{
 .button:hover{
     background: #595d66 ;
 }
+
+/* ---------------------------contact -----------------------------------*/
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-left p{
+    margin-top: 30px ;
+}
+
+.social-icon{
+    margin-top: 30px;
+}
+
+.social-icon a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 0.5s;
+    color: #a19f9d !important;
+}
+
+.social-icon a:hover{
+    color: #7f5836 !important;
+    transform: translateY(-5px);
+}
+
+.button.btn2{
+    display: inline-block;
+    background: #7f5836;
+}
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #b7b8bb;
+    padding: 15px;
+    margin: 15px 0;
+    color: #443025;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #1b1e28;
+    font-weight: 300;
+    margin-top: 20px;
+}
