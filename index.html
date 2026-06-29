@@ -8,10 +8,9 @@
     <script src="https://kit.fontawesome.com/4b35004957.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="Images/logo.png" alt="Logo" class="logo"" alt="Logo" class="logo">
+    <nav id="navbar">
+        <div class="nav-inner">
+            <img src="Images/logo.png" alt="Logo" class="logo"" alt="Logo" class="logo">
                 <ul id="side-menu">
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -20,8 +19,11 @@
                     <li><a href="#contact">Contact</a></li>
                     <i class="fa-solid fa-xmark icon" style="color: #d7d7d6;" onclick="closemenu()"></i>
                 </ul>
-                <i class="fa-solid fa-bars icon" style="color: #d7d7d6;" onclick="openmenu()"></i>
-            </nav>
+            <i class="fa-solid fa-bars icon" style="color: #d7d7d6; justify-content: flex-end;" onclick="openmenu()"></i>
+        </div>
+     </nav>
+    <div id="header">        
+        <div class="container">    
             <div class="header-content">
                 <p>Undergraduate Student</p>
                 <h1>Hello, I'm <span>Aseka</span> ! </h1>

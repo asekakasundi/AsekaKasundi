@@ -20,6 +20,40 @@ html{
     background-image: url(Images/My\ Image.png);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 0;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    background: #191d28;
+}
+
+#navbar.scrolled {
+    background: #1b1e28;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+#navbar ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2px 5%;
+
 }
 
 
@@ -37,7 +71,7 @@ nav{
 
 
 .logo{
-    width: 140px;
+    width: 100px;
 }
 
 
@@ -51,7 +85,7 @@ nav ul li{
 nav ul li a{
     color: #b7b8bb;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     position: relative;
 }
 
@@ -72,7 +106,7 @@ nav ul li a:hover::after{
 }
 
 .header-content{
-    margin-top: 20%;
+    margin-top: 40%;
     font-size: 30px;
 }
 .header-content h1{
@@ -84,6 +118,11 @@ nav ul li a:hover::after{
     color: #a08a81;
 }
 
+#about, #service, #portfolio, #contact {
+    position: relative;
+    z-index: 1;
+    background: #272b36;
+}
 
 /* ----------------about--------------------------- */
 #about{
@@ -373,17 +412,19 @@ nav .icon{
         background-image: url(Images/MyImageSmall.png);
     }
     .header-content{
-        margin-top:100%;
+        margin-top:150%;
         font-size:16px;
     }
     .header-content h1{
         font-size: 30px;
     }
-    nav .icon{
-        display: block;
+    #navbar .icon{
+        display: block !important;
         font-size: 25px;
+        cursor: pointer;
+        margin-left: auto;
     }
-    nav ul{
+    #navbar ul{
         background: #886552;
         position: fixed ;
         top: 0;
@@ -394,11 +435,18 @@ nav .icon{
         z-index: 2;
         transition: right 0.5s;
     }
-    nav ul li{
+    #navbar .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2px 5%;
+    }
+    #navbar ul li{
         display: block;
         margin: 25px;
     }
-    nav ul .icon{
+    #navbar ul .icon{
         position: absolute;
         top: 25px;
         left: 25px;
