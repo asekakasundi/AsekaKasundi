@@ -19,5 +19,8 @@ jobs:
       - name: Verify CSS File Exists
         run: test -f style.css
 
+      - name: Verify Images Directory Exists
+        run: test -d Images  
+
       - name: CI Successful
         run: echo "Website Passed Validation"
