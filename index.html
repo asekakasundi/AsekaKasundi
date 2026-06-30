@@ -205,36 +205,5 @@
 
     </script>
 
-    <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbyHsxQ1kebhZ0RKAEOacJ2gdoLbaYVI85dxvVzdvDDQHM_UjEw6Zxn7v7vrkdCcfYE/exec";
-        const form = document.forms["YOUR_FORM_NAME"];
-
-        form.addEventListener("submit", e => {
-
-            e.preventDefault();
-
-            fetch(scriptURL, {
-                method: "POST",
-                body: new FormData(form)
-    })
-    .then(response => response.json())
-    .then(data => {
-
-        alert("Message sent successfully!");
-
-        form.reset();
-
-    })
-    .catch(error => {
-
-        alert("Something went wrong.");
-
-        console.error(error);
-
-    });
-
-});
-	
-    </script>
 </body>
 </html>
