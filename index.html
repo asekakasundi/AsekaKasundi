@@ -153,12 +153,14 @@
                     <a href="Aseka Kasundi-CV.pdf" download class="button btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form name="YOUR_FORM_NAME">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="button btn2">Submit</button>
+                    <form id="contact-form" onsubmit="sendEmail(event); return false;">
+                        <input type="text" name="from_name" placeholder="Your Name" required>
+                        <input type="email" name="from_email" placeholder="Your Email" required>
+                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="button btn2" id="submit-btn">Submit</button>
                     </form>
+                    <p id="form-status" style="margin-top:15px; display:none;"></p>
+
                 </div>
             </div>
         </div>
@@ -201,7 +203,53 @@
 //Open tab function
         function openmenu(){
             sidemenu.style.right = "0";
-        }        
+        }     
+        
+        
+
+
+
+        //Spread Sheet Setup
+
+        const SHEET_URL = "https://script.google.com/macros/s/AKfycbzAexKWyGaHGZDL-NMiMtggOhJSExMMR3nghzJfHLXr1RfBLttmnoldxL6MSLnhaW6Z/exec";
+
+        function sendEmail(e) {
+            e.preventDefault();
+            var btn = document.getElementById("submit-btn");
+            var status = document.getElementById("form-status");
+            var form = document.getElementById("contact-form");
+
+            var name    = form.querySelector('[name="from_name"]').value;
+            var email   = form.querySelector('[name="from_email"]').value;
+            var message = form.querySelector('[name="message"]').value;
+
+            btn.textContent = "Sending…";
+            btn.disabled = true;
+
+            fetch(SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "text/plain" },
+                body: JSON.stringify({ name: name, email: email, message: message })
+            })
+            .then(function () {
+                status.textContent = "✅ Message sent! I'll get back to you soon.";
+                status.style.color = "#a8d5a2";
+                status.style.display = "block";
+                form.reset();
+                btn.textContent = "Submit";
+                btn.disabled = false;
+            })
+            .catch(function (err) {
+                status.textContent = "❌ Something went wrong. Please try again.";
+                status.style.color = "#e07070";
+                status.style.display = "block";
+                btn.textContent = "Submit";
+                btn.disabled = false;
+            });
+
+            return false;
+        }
 
     </script>
 

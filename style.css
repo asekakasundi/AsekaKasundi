@@ -469,3 +469,9 @@ nav .icon{
         font-size: 14px;
     }
 }
+
+#msg{
+    color: #a08a81;
+    margin-top: -40px;
+    display: block;
+}
